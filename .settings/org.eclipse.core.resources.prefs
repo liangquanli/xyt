@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//xyt_web/conf/debug.py=utf-8
+encoding//xyt_web/conf/demo.py=utf-8
+encoding//xyt_web/conf/prod.py=utf-8
+encoding//xyt_web/server.py=utf-8
+encoding//xyt_web/urls.py=utf-8
+encoding//xyt_web/views/payment_statistics.py=utf-8
+encoding//xyt_web/views/region.py=utf-8
+encoding//xyt_web/views/sections.py=utf-8
+encoding//xyt_web/views/user.py=utf-8
+encoding/__init__.py=utf-8

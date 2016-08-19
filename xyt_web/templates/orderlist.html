@@ -1,0 +1,366 @@
+{% from "_footerhelper.html" import footer %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="Robots" content="all">
+<meta http-equiv="cache-control" content="no-cache">
+<meta content="telephone=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<title>我的订单</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../static/css/m_center.css">
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.js"></script>
+<script type="text/javascript" src="js/modal.js"></script>
+</head>
+<body style="background:#f5f5f5;">
+<div class="container" style="margin-top:0;">
+    <div class="form-group s_headertop">
+       <div class="row">
+             <div class="col-xs-4 s_hleft text-left">
+                <p><a href="Member_center.html"  data-ajax="false"><span class="glyphicon glyphicon-menu-left"></span>返回</a></p>
+             </div>
+             <div class="col-xs-4 s_hcenter text-center">
+                <p>我的订单</p>
+             </div>
+             <div class="col-xs-4 s_right text-right">
+               <p><a href=""><img src="../static/images/grid.png"/></a></p>
+             </div>
+       </div>
+    </div>
+	<header>
+    	<div class="form-group s_header row ">
+        	 <nav>
+                <div  class="on"><a>全部</a></div>
+                <div><a>待支付</a></div>
+                <div><a>待收货</a></div>
+                <div><a>已完成</a></div>
+             </nav>
+        </div>
+    </header>
+ <div class="form-group">
+  <!--content-->
+  <div class="form-group s_orderlist">
+      <div class="form-group cont0" data-role="content">
+      	<div class="row " data-role="listview" id="contentList0">
+           <div class="form-group contentbg">
+                   <div class="row s_ordertime">
+                      <div class="col-xs-9 text-left"><img src="../static/images/s_order.png"/> 店铺名称</div>
+                      <div class="col-xs-3 text-right" >全部</div>
+                  </div>
+                  <div class="s_order row">
+                  	<a href="orderlistxq.html"  data-ajax="false">
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img1.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>红烧排骨(新品)</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 20.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                      </a>
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img2.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>糖醋小排</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 22.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row s_ordersp">
+                      <div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>89.00</span>（含运费：¥5.00）</div>
+                  </div>
+            </div>
+    
+         </div> 
+         <p class="ww row"><input type="button" value="更多" id="btnMore0"/></p>    
+      </div> 
+     <div class="form-group cont1" data-role="content">
+       <div class="row" data-role="listview" id="contentList1">
+          <div class="form-group contentbg">
+                   <div class="row s_ordertime">
+                      <div class="col-xs-9 text-left"><img src="../static/images/s_order.png"/> 店铺名称</div>
+                      <div class="col-xs-3 text-right" >待支付</div>
+                  </div>
+                  <div class="s_order row">
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img3.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>红烧排骨(新品)</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 20.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img4.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>糖醋小排</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 22.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row s_ordersp">
+                      <div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>89.00</span>（含运费：¥5.00）</div>
+                  </div>
+                  <div class="row s_orderbtn text-center">
+                     <div class="col-xs-4 text-right"></div>
+                     <div class="col-xs-4 text-right"><button type="button" class="btn btn-grey form-control">取消订单</button></div>
+                     <div class="col-xs-4 text-right"><button type="button" class="btn btn-pink form-control">立即支付</button></div>
+                  </div>
+            </div>
+       </div>     
+        <p class="ww row"><input type="button" value="更多" id="btnMore1"/></p> 
+     </div>
+      <div class="form-group cont2" data-role="content">
+      	<div class="row" data-role="listview" id="contentList2">
+           <div class="form-group contentbg">
+                   <div class="row s_ordertime">
+                       <div class="col-xs-9 text-left"><img src="../static/images/s_order.png"/> 店铺名称</div>
+                      <div class="col-xs-3 text-right" >待收货</div>
+                  </div>
+                  <div class="s_order row">
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img3.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>小排</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 20.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img1.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>红烧排骨</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 22.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row s_ordersp">
+                      <div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>89.00</span>（含运费：¥5.00）</div>
+                  </div>
+                  <div class="row s_orderbtn text-center">
+                     <div class="col-xs-4 text-right"></div>
+                     <div class="col-xs-4 text-right"><button type="button" class="btn btn-grey form-control">取消订单</button></div>
+                     <div class="col-xs-4 text-right"><button type="button" class="btn btn-pink form-control">确认收货</button></div>
+                  </div>
+            </div>   
+       </div>
+       <p class="ww row"><input type="button" value="更多" id="btnMore2"/></p>  
+      </div>
+     <div class="form-group cont3" data-role="content">
+      	<div class="row" data-role="listview" id="contentList3">
+           <div class="form-group contentbg">
+                   <div class="row s_ordertime">
+                      <div class="col-xs-9 text-left"><img src="../static/images/s_order.png"/> 店铺名称</div>
+                      <div class="col-xs-3 text-right" >已完成</div>
+                  </div>
+                  <div class="s_order row">
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img1.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>小泡</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 20.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-2 text-left"><span><img src="../static/images/img1.jpg" class="img-rounded"/></span></div>
+                          <div class="col-xs-7 text-left" >
+                               <p>猜猜</p>
+                          </div>
+                          <div class="col-xs-3 text-right s_left" >
+                            <p>¥ 22.00</p>
+                            <p>× 2</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row s_ordersp">
+                      <div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>89.00</span>（含运费：¥5.00）</div>
+                  </div>
+                  <div class="row s_orderbtn text-center">
+                     <div class="col-xs-4 text-right"></div>
+                     <div class="col-xs-4 text-right"><button type="button" class="btn btn-grey form-control" id="rr">删除订单</button></div>
+                     <div class="col-xs-4 text-right"><button type="button" class="btn btn-pink form-control" id="zhifu">订单评价</button></div>
+                  </div>
+            </div>   
+        </div>  
+        <p class="ww row"><input type="button" value="更多" id="btnMore3"/></p> 
+   </div>  
+ <!--content-->
+  </div>    
+</div>
+</div>
+ <!--加载中-->
+<div class="modal1" style="display:none;"></div>
+<div class="s_money">
+	<p id="fukuan"><img src="images/s_zw.png"/>微信支付</p>
+    <p><img src="images/s_zf.png"/>微信支付</p>
+    <p><img src="images/s_zy.png"/>微信支付</p>
+</div>
+ <div class="loading">
+     <div class="load8">
+      <div class="load8-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="load8-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="load8-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+   </div>
+</div>
+<div class="g_zhifu" style="position:fixed; top:0; right:0; z-index:6; display:none;">
+	<p><img src="images/g_tanzhifu.png" style="width:80%; height:auto; margin-left:20%;"/></p>
+</div>
+{{footer()}}
+<script>
+$(".g_zhifu").click(function(){
+	 //遮罩层隐藏   
+	 //$('').hide();
+	 $('.g_zhifu').hide();
+})
+
+
+/*取消订单*/
+$("#rr").click(function(){
+	modal2("您是否要取消订单，取消后订单项会在两个工作日内原途径返还到您的账户上。");
+})
+/*加载中*/
+$("#zhifu").click(function(){
+	$('body').css('overflow', 'hidden');
+	 $('.modal1').show();
+	 $('.s_money').show();
+})
+$("#fukuan").click(function(){
+	$('body').css('overflow', 'hidden');
+	 $('.modal1').show();
+	 $('.loading').show();
+	  $('.s_money').hide();
+})
+for(var i=0;i<1;i++){
+	var s_cont="cont"+$(".s_header .on").index();
+	$('.'+s_cont).show().siblings().hide();
+	document.body.scrollTop=0;
+	}
+	$(".s_header div").click(function(){
+		$(this).attr("class","on").siblings().removeAttr("class","on");
+		 var s_cont="cont"+$(this).index();
+		 $('.'+s_cont).show().siblings().hide();
+		 document.body.scrollTop=0;
+	 })
+	  $("#btnMore0").click(function(){
+			loadData0();
+	  });
+	   $("#btnMore1").click(function(){
+			loadData1();
+	  });
+	   $("#btnMore2").click(function(){
+			loadData2();
+	  });
+	   $("#btnMore3").click(function(){
+			loadData3();
+	  });
+	 
+	function loadData0(){
+		/*$.ajax({
+		   type: "POST",	 
+		   url:'json/index1.json',
+		   data:'',
+		   dataType:'json',
+	       success:function(data){*/
+			 //判断时如果没有传过来 写上这一句  $("#you_1 input").val("已显示全部")
+				 for(var i=0;i<3; i++){
+				    var content ='<div class="form-group contentbg"><div class="row s_ordertime"><div class="col-xs-9 text-left"><img src="images/s_order.png"/> 店铺名称</div><div class="col-xs-3 text-right">全部</div></div><div class="s_order row"><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p></div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p> </div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div></div><div class="row s_ordersp"><div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>596.00</span>（含运费：¥0.00）</div></div><div class="row s_orderbtn text-center"><div class="col-xs-4 text-right"></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-grey form-control">取消订单</button></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-pink form-control">立即支付</button></div></div></div>';
+				   $("#contentList0").append(content).listview('refresh');
+			    }
+				
+	   /*     }
+	    })	 */ 
+   }
+function loadData1(){
+		/*$.ajax({
+		   type: "POST",	 
+		   url:'json/index1.json',
+		   data:'',
+		   dataType:'json',
+	       success:function(data){*/
+			 //判断时如果没有传过来 写上这一句  $("#you_1 input").val("已显示全部")
+				 for(var i=0;i<1; i++){
+				    var content ='<div class="form-group contentbg"><div class="row s_ordertime"><div class="col-xs-9 text-left"><img src="images/s_order.png"/> 店铺名称</div><div class="col-xs-3 text-right">待支付</div></div><div class="s_order row"><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p></div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p> </div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div></div><div class="row s_ordersp"><div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>596.00</span>（含运费：¥0.00）</div></div><div class="row s_orderbtn text-center"><div class="col-xs-4 text-right"></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-grey form-control">取消订单</button></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-pink form-control">立即支付</button></div></div></div>';
+				   $("#contentList1").append(content).listview('refresh');
+			    }
+				
+	   /*     }
+	    })	 */ 
+   }
+function loadData2(){
+		/*$.ajax({
+		   type: "POST",	 
+		   url:'json/index1.json',
+		   data:'',
+		   dataType:'json',
+	       success:function(data){*/
+			 //判断时如果没有传过来 写上这一句  $("#you_1 input").val("已显示全部")
+				 for(var i=0;i<1; i++){
+				    var content ='<div class="form-group contentbg"><div class="row s_ordertime"><div class="col-xs-9 text-left"><img src="images/s_order.png"/> 店铺名称</div><div class="col-xs-3 text-right">待收货</div></div><div class="s_order row"><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p></div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p> </div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div></div><div class="row s_ordersp"><div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>596.00</span>（含运费：¥0.00）</div></div><div class="row s_orderbtn text-center"><div class="col-xs-4 text-right"></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-grey form-control">取消订单</button></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-pink form-control">立即支付</button></div></div></div>';
+				   $("#contentList2").append(content).listview('refresh');
+			    }
+				
+	   /*     }
+	    })	 */ 
+   }
+function loadData3(){
+		/*$.ajax({
+		   type: "POST",	 
+		   url:'json/index1.json',
+		   data:'',
+		   dataType:'json',
+	       success:function(data){*/
+			 //判断时如果没有传过来 写上这一句  $("#you_1 input").val("已显示全部")
+				 for(var i=0;i<1; i++){
+				    var content ='<div class="form-group contentbg"><div class="row s_ordertime"><div class="col-xs-9 text-left"><img src="images/s_order.png"/> 店铺名称</div><div class="col-xs-3 text-right">已完成</div></div><div class="s_order row"><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p></div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div><div class="row"><div class="col-xs-2 text-left"><span><img src="images/s_ordertu1.png" class="img-rounded"/></span></div><div class="col-xs-7 text-left" ><p>圣元优聪孕圣元圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪圣元优聪孕圣元优圣元优聪优圣元优聪</p> </div><div class="col-xs-3 text-right s_left" ><p>¥ 294448000.00</p><p>× 2</p></div></div></div><div class="row s_ordersp"><div class="col-xs-12 text-right" >共 2 件商品 实付款：¥<span>596.00</span>（含运费：¥0.00）</div></div><div class="row s_orderbtn text-center"><div class="col-xs-4 text-right"></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-grey form-control">取消订单</button></div><div class="col-xs-4 text-right"><button type="button" class="btn btn-pink form-control">立即支付</button></div></div></div>';
+				   $("#contentList3").append(content).listview('refresh');
+			    }
+				
+	   /*     }
+	    })	 */ 
+   }
+
+   
+   
+</script>
+</body>
+</html>

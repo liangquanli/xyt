@@ -1,0 +1,124 @@
+{% from "_footerhelper.html" import footer %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="Robots" content="all">
+<meta http-equiv="cache-control" content="no-cache">
+<meta content="telephone=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<title>美食专区</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../static/css/m_center.css">
+<link rel="stylesheet" href="../static/css/img_style.css">
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/modal.js"></script>
+</head>
+
+<body>
+<div id="banner">
+    <div id="banner_bg"></div> <!--标题背景-->
+    <div id="banner_info"></div> <!--标题-->
+    <ul>
+        <li class="on">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div id="banner_list" >
+        <a href="#" target="_blank"><img class="img-responsive"
+                                         src="../static/images/showimg1.jpg" title="" alt="新品上架"/></a>
+        <a href="#" target="_blank"><img class="img-responsive"
+                                         src="../static/images/showimg2.jpg" title="" alt="美味无法阻挡"/></a>
+        <a href="#" target="_blank"><img class="img-responsive"
+                                         src="../static/images/showimg3.jpg" title="" alt="甜甜的幸福感"/></a>
+    </div>
+</div>
+<div class="form-group s_product" style="margin-bottom: 100px">
+    <div class="form-group" data-role="content">
+        <div class="row content" data-role="listview" id="contentList0">
+            <div class="col-xs-6">
+                <a href="#" data-ajax="false">
+                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px" src="../static/images/img1.jpg"/>
+                    <p style="margin: 10px 10px 10px 10px" class="s_wen">酱肘子(新品)</p></a>
+                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 20.00 <span><img width="20px" height="20px"
+                        src="../static/images/s_buy.png"/></span></p>
+
+            </div>
+            <div class="col-xs-6">
+                <a href="#" data-ajax="false">
+                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px" src="../static/images/img2.jpg"/>
+                    <p style="margin: 10px 10px 10px 10px" class="s_wen">糖醋小排</p></a>
+                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 22.00 <span><img width="20px" height="20px"
+                        src="../static/images/s_buy.png"/></span></p>
+
+            </div>
+        </div>
+    </div>
+    <div class="form-group cont1" data-role="content">
+        <div class="row content" data-role="listview" id="contentList1">
+            <div class="col-xs-6">
+                <a href="#" data-ajax="false">
+                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px"
+                         src="../static/images/img3.jpg"/>
+                    <p style="margin: 10px 10px 10px 10px" class="s_wen">美好时光(新品)</p></a>
+                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 20.00 <span><img width="20px" height="20px"
+                                                                                          src="../static/images/s_buy.png"/></span>
+                </p>
+
+            </div>
+            <div class="col-xs-6">
+                <a href="#" data-ajax="false">
+                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px"
+                         src="../static/images/img4.jpg"/>
+                    <p style="margin: 10px 10px 10px 10px" class="s_wen">幸福人生(新品)</p></a>
+                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 22.00 <span><img width="20px" height="20px"
+                                                                                          src="../static/images/s_buy.png"/></span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{{footer()}}
+<script type="text/javascript">
+    var t = n = 0, count;
+    $(document).ready(function () {
+        count = $("#banner_list a").length;
+        $("#banner_list a:not(:first-child)").hide();
+        $("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
+        $("#banner_info").click(function () {
+            window.open($("#banner_list a:first-child").attr('href'), "_blank")
+        });
+        $("#banner li").click(function () {
+            var i = $(this).text() - 1; //获取Li元素内的值，即1，2，3，4
+            n = i;
+            if (i >= count) return;
+            $("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
+            $("#banner_info").unbind().click(function () {
+                window.open($("#banner_list a").eq(i).attr('href'), "_blank")
+            })
+            $("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+            document.getElementById("banner").style.background = "";
+            $(this).toggleClass("on");
+            $(this).siblings().removeAttr("class");
+        });
+        t = setInterval("showAuto()", 2000);
+        $("#banner").hover(function () {
+            clearInterval(t)
+        }, function () {
+            t = setInterval("showAuto()", 2000);
+        });
+    })
+
+    function showAuto() {
+        n = n >= (count - 1) ? 0 : ++n;
+        $("#banner li").eq(n).trigger('click');
+    }
+</script>
+</html>
