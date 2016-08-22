@@ -14,76 +14,69 @@
 <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="../static/css/m_center.css">
-<link rel="stylesheet" href="../static/css/img_style.css">
+    <link rel="stylesheet" href="../static/css/img_style.css">
+    <link rel="stylesheet" href="../static/css/productxq1.css">
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript" src="../static/js/modal.js"></script>
 </head>
 
 <body>
-<div id="banner">
-    <div id="banner_bg"></div> <!--标题背景-->
-    <div id="banner_info"></div> <!--标题-->
-    <ul>
-        <li class="on">1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
-    <div id="banner_list" >
-        <a href="#" target="_blank"><img class="img-responsive"
-                                         src="../static/images/showimg1.jpg" title="" alt="新品上架"/></a>
-        <a href="#" target="_blank"><img class="img-responsive"
-                                         src="../static/images/showimg2.jpg" title="" alt="美味无法阻挡"/></a>
-        <a href="#" target="_blank"><img class="img-responsive"
-                                         src="../static/images/showimg3.jpg" title="" alt="甜甜的幸福感"/></a>
+<div>
+    <div id="banner">
+        <div id="banner_bg"></div> <!--标题背景-->
+        <div id="banner_info"></div> <!--标题-->
+        <ul>
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div id="banner_list">
+            <a href="#" target="_blank"><img class="img-responsive"
+                                             src="../static/images/showimg1.jpg" title="" alt="新品上架"/></a>
+            <a href="#" target="_blank"><img class="img-responsive"
+                                             src="../static/images/showimg2.jpg" title="" alt="美味无法阻挡"/></a>
+            <a href="#" target="_blank"><img class="img-responsive"
+                                             src="../static/images/showimg3.jpg" title="" alt="甜甜的幸福感"/></a>
+        </div>
     </div>
-</div>
-<div class="form-group s_product" style="margin-bottom: 100px">
-    <div class="form-group" data-role="content">
-        <div class="row content" data-role="listview" id="contentList0">
-            <div class="col-xs-6">
-                <a href="#" data-ajax="false">
-                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px" src="../static/images/img1.jpg"/>
-                    <p style="margin: 10px 10px 10px 10px" class="s_wen">酱肘子(新品)</p></a>
-                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 20.00 <span><img width="20px" height="20px"
-                        src="../static/images/s_buy.png"/></span></p>
-
-            </div>
-            <div class="col-xs-6">
-                <a href="#" data-ajax="false">
-                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px" src="../static/images/img2.jpg"/>
-                    <p style="margin: 10px 10px 10px 10px" class="s_wen">糖醋小排</p></a>
-                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 22.00 <span><img width="20px" height="20px"
-                        src="../static/images/s_buy.png"/></span></p>
-
+    <!--<header>-->
+    	<!--<div class="form-group s_header row" >-->
+        	 <!--<nav>-->
+                <!--<div class="on"><a style="color:#454545;">全部</a></div>-->
+                <!--<div><a>洗护</a></div>-->
+                <!--<div><a>营养</a></div>-->
+                <!--<div><a>辅食/奶粉</a></div>-->
+             <!--</nav>-->
+        <!--</div>-->
+    <!--</header>-->
+    <div style="position: relative; background: bisque; z-index: 1">
+        <p id="top" align="center" style="margin-top: 0px; height:50px; line-height: 50px;">——热销商品——</p>
+    </div>
+    <div class="form-group s_product" style="margin-bottom: 100px">
+        <div class="form-group" data-role="content">
+            <div class="row content" data-role="listview" id="contentList">
+                {% for i in range(food_list.__len__()) %}
+                <div class="col-xs-6">
+                    <a href="#" data-ajax="false">
+                        <img src="{{ food_list[i].image }}"/>
+                        <p class="s_wen">{{ food_list[i].name }}</p>
+                        <p class="s_wen">下单量: {{ food_list[i].order_count }}</p>
+                    </a>
+                    {% if food_list[i].is_discount %}
+                    <p class="s_jiage">￥{{ food_list[i].discount_price
+                        }}<span><span>  ￥{{ food_list[i].fixed_price }}</span><img
+                                src="../static/images/s_buy.png"/></span></p>
+                    {% else %}
+                    <p class="s_jiage">{{ food_list[i].fixed_price }}<span><img
+                            src="../static/images/s_buy.png"/></span></p>
+                    {% endif %}
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-    <div class="form-group cont1" data-role="content">
-        <div class="row content" data-role="listview" id="contentList1">
-            <div class="col-xs-6">
-                <a href="#" data-ajax="false">
-                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px"
-                         src="../static/images/img3.jpg"/>
-                    <p style="margin: 10px 10px 10px 10px" class="s_wen">美好时光(新品)</p></a>
-                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 20.00 <span><img width="20px" height="20px"
-                                                                                          src="../static/images/s_buy.png"/></span>
-                </p>
-
-            </div>
-            <div class="col-xs-6">
-                <a href="#" data-ajax="false">
-                    <img style="margin: 10px 10px 10px 10px" width="150px" height="170px"
-                         src="../static/images/img4.jpg"/>
-                    <p style="margin: 10px 10px 10px 10px" class="s_wen">幸福人生(新品)</p></a>
-                <p style="margin: 10px 10px 10px 10px" class="s_jiage">¥ 22.00 <span><img width="20px" height="20px"
-                                                                                          src="../static/images/s_buy.png"/></span>
-                </p>
-
-            </div>
-        </div>
-    </div>
-</div>
+    <div>
 </body>
 {{footer()}}
 <script type="text/javascript">
@@ -120,5 +113,49 @@
         n = n >= (count - 1) ? 0 : ++n;
         $("#banner li").eq(n).trigger('click');
     }
+
+    $.fn.smartFloat = function () {
+        var position = function (element) {
+            console.log(element)
+            var top = element.position().top, pos = element.css("position");
+            $(window).scroll(function () {
+                var scrolls = $(this).scrollTop();
+                console.log(top)
+                if (scrolls > 200) { //如果滚动到页面超出了当前元素element的相对页面顶部的高度
+                    $("#top").css({
+                        "position": "absolute",
+                        "width": "100%",
+                        "height": "50px",
+                        "line-height": "50px",
+                        "margin-top": "0px",
+                        "background": "bisque"
+                    })
+                    if (window.XMLHttpRequest) { //如果不是ie6
+                        element.css({
+                            position: "fixed",
+                            top: 0
+                        }).addClass("shadow");
+                    } else { //如果是ie6
+                        element.css({
+                            top: scrolls
+                        });
+                    }
+                } else {
+
+                    element.css({
+                        position: pos,
+                        top: top
+                    }).removeClass("shadow");
+                }
+            });
+        };
+        return $(this).each(function () {
+            position($(this));
+        });
+    };
+    $(function () {
+        $("#tip").smartFloat();
+        $("#top").smartFloat();
+    });
 </script>
 </html>
